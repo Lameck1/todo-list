@@ -191,6 +191,12 @@ input[type=button] {
   flex: 0 1 0;
 }
 
+.drag-button {
+  padding: 0;
+  font-size: 1.3rem;
+  cursor: move;
+}
+
 .refresh-div,
 input[type=button],
 .drag-button,
@@ -198,9 +204,10 @@ input[type=button],
   opacity: 0.5;
 }
 
-.drag-button {
-  padding: 0;
-  font-size: 1.1rem;
+.refresh-div,
+input[type=button],
+.clear-button {
+  cursor: pointer;
 }
 
 .clear-button {
@@ -215,10 +222,9 @@ input[type=button],
 
 .refresh-div:hover,
 input[type=button]:hover,
-.drag-button:hover,
-.clear-button:hover {
+.clear-button:hover,
+.drag-button:hover {
   opacity: 1;
-  cursor: pointer;
 }
 
 .header-div,
