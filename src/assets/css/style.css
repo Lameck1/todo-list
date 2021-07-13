@@ -218,6 +218,7 @@ input[type=button]:hover,
 .drag-button:hover,
 .clear-button:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 .header-div,
