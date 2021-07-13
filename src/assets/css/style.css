@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: 'El Messiri', sans-serif;
+  background-color: #f1f2f5;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 1.4rem;
+  color: #361d32;
+}
+
+header,
+.main {
+  margin: 0 auto;
+  width: 35%;
+}
+
+.main {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  flex-direction: column;
+}
+
+.header-div {
+  align-content: center;
+  justify-content: space-between;
+}
+
+.refresh-div {
+  position: relative;
+}
+
+.pending-count {
+  position: absolute;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 1;
+  top: -6px;
+  right: -6px;
+  font-size: 0.8rem;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.task-list {
+  flex-direction: column;
+}
+
+.checkbox,
+.delete-button {
+  flex: 0 1 0;
+}
+
+.editable {
+  flex: 2 1 0;
+  font-size: 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.task-list,
+.delete-button,
+.drag-button,
+input[type=text],
+input[type=button] {
+  background-color: inherit;
+  border: none;
+}
+
+input[type=text] {
+  outline: none;
+  flex: 1 1 0;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+input[type=button] {
+  flex: 0 1 0;
+}
+
+.refresh-div,
+input[type=button],
+.drag-button,
+.clear-button {
+  opacity: 0.5;
+}
+
+.drag-button {
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.clear-button {
+  border: none;
+  padding: 15px 0;
+  font-size: 1.05rem;
+}
+
+.task-container {
+  align-items: center;
+}
+
+.refresh-div:hover,
+input[type=button]:hover,
+.drag-button:hover,
+.clear-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.header-div,
+.task-form,
+.task-container {
+  padding: 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+footer {
+  position: absolute;
+  border-top: 1px solid #e3e3e3;
+  height: 50px;
+  padding: 10px 0;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+small {
+  color: #361d32;
+}
