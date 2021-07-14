@@ -140,8 +140,8 @@ header,
   border-radius: 50%;
   background-color: red;
   z-index: 1;
-  top: -6px;
-  right: -6px;
+  top: -30%;
+  right: -30%;
   font-size: 0.8rem;
   padding: 2px;
   align-items: center;
@@ -161,6 +161,7 @@ header,
 .editable {
   flex: 2 1 0;
   font-size: 1rem;
+  outline: none;
 }
 
 .d-flex {
@@ -216,7 +217,7 @@ input[type=button],
   font-size: 1.05rem;
 }
 
-.task-container {
+.draggable {
   align-items: center;
 }
 
@@ -229,7 +230,7 @@ input[type=button]:hover,
 
 .header-div,
 .task-form,
-.task-container {
+.draggable {
   padding: 10px;
   border-bottom: 1px solid #e3e3e3;
 }
@@ -247,4 +248,9 @@ footer {
 
 small {
   color: #361d32;
+}
+
+.draggable.dragging {
+  background-color: #eee;
+  border: 1px solid #333;
 }
