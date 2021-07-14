@@ -113,8 +113,8 @@ header {
 
 header,
 .main {
-  margin: 0 auto;
-  width: 35%;
+  max-width: 100%;
+  margin: 0 20px;
 }
 
 .main {
@@ -253,4 +253,12 @@ small {
 .draggable.dragging {
   background-color: #eee;
   border: 1px solid #333;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    margin: 0 auto;
+    width: 35%;
+    padding: 0;
+  }
 }
