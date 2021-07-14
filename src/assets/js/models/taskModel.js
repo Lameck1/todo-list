@@ -11,4 +11,10 @@ export default class TaskModel {
   static refreshStorage() {
     localStorage.setItem('tasks', JSON.stringify(TaskModel.samples));
   }
+
+  static toggleTaskStatus(index) {
+    const task = TaskModel.tasks[index];
+    task.complete = !task.complete;
+    TaskModel.refreshStorage();
+  }
 }
