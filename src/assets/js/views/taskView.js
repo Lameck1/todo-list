@@ -54,7 +54,7 @@ export default class TaskView {
 
         const taskDesc = createElement('span', {
           contentEditable: true,
-          class: 'editable',
+          class: `${task.complete ? 'editable complete' : 'editable'}`,
           'data-id': `${tasks.indexOf(task)}`,
         }, description);
 

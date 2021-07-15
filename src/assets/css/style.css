@@ -164,6 +164,11 @@ header,
   outline: none;
 }
 
+.editable.complete {
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
 .d-flex {
   display: flex;
 }
