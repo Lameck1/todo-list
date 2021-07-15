@@ -22,7 +22,7 @@ export default class TaskView {
     this.submit = createElement('input', {
       type: 'button',
       tabindex: '-1',
-      title: 'click this or press enter to submit',
+      title: 'Click this or press enter to submit.',
     });
     this.submit.value = '\u21B2';
 
@@ -42,31 +42,31 @@ export default class TaskView {
       this.taskList.removeChild(this.taskList.firstChild);
     }
 
-    this.pendingCount.textContent = `${tasks.filter((task) => task.complete === false).length}`;
-
     if (tasks.length) {
+      this.pendingCount.textContent = `${tasks.filter((task) => task.complete === false).length}`;
       tasks.forEach((task) => {
-        const { id, description, complete } = task;
+        const { description, complete } = task;
 
-        const listItem = createElement('li', { class: 'task-container d-flex' });
+        const listItem = createElement('li', { class: 'task-container d-flex draggable', 'data-id': `${tasks.indexOf(task)}`, draggable: true });
 
-        const checkbox = createElement('input', { type: 'checkbox', 'data-id': `${id}`, class: 'checkbox' });
+        const checkbox = createElement('input', { type: 'checkbox', 'data-id': `${tasks.indexOf(task)}`, class: 'checkbox' });
         checkbox.checked = complete;
 
         const taskDesc = createElement('span', {
-          contenEditable: true,
+          contentEditable: true,
           class: 'editable',
-          'data-id': `${id}`,
+          'data-id': `${tasks.indexOf(task)}`,
         }, description);
 
         const deleteButton = createElement('button', {
           class: 'delete material-icons delete-button d-none',
-          'data-id': `${id}`,
+          'data-id': `${tasks.indexOf(task)}`,
         }, 'delete');
 
         const dragButton = createElement('button', {
           class: 'more_vert material-icons drag-button',
-          'data-id': `${id}`,
+          'data-id': `${tasks.indexOf(task)}`,
+          title: 'Hold and drag item, drop to reorder.',
         }, 'more_vert');
 
         listItem.append(checkbox, taskDesc, deleteButton, dragButton);

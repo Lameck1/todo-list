@@ -113,8 +113,8 @@ header {
 
 header,
 .main {
-  margin: 0 auto;
-  width: 35%;
+  max-width: 100%;
+  margin: 0 20px;
 }
 
 .main {
@@ -140,8 +140,8 @@ header,
   border-radius: 50%;
   background-color: red;
   z-index: 1;
-  top: -6px;
-  right: -6px;
+  top: -30%;
+  right: -30%;
   font-size: 0.8rem;
   padding: 2px;
   align-items: center;
@@ -161,6 +161,7 @@ header,
 .editable {
   flex: 2 1 0;
   font-size: 1rem;
+  outline: none;
 }
 
 .d-flex {
@@ -191,6 +192,12 @@ input[type=button] {
   flex: 0 1 0;
 }
 
+.drag-button {
+  padding: 0;
+  font-size: 1.3rem;
+  cursor: move;
+}
+
 .refresh-div,
 input[type=button],
 .drag-button,
@@ -198,9 +205,10 @@ input[type=button],
   opacity: 0.5;
 }
 
-.drag-button {
-  padding: 0;
-  font-size: 1.1rem;
+.refresh-div,
+input[type=button],
+.clear-button {
+  cursor: pointer;
 }
 
 .clear-button {
@@ -209,21 +217,20 @@ input[type=button],
   font-size: 1.05rem;
 }
 
-.task-container {
+.draggable {
   align-items: center;
 }
 
 .refresh-div:hover,
 input[type=button]:hover,
-.drag-button:hover,
-.clear-button:hover {
+.clear-button:hover,
+.drag-button:hover {
   opacity: 1;
-  cursor: pointer;
 }
 
 .header-div,
 .task-form,
-.task-container {
+.draggable {
   padding: 10px;
   border-bottom: 1px solid #e3e3e3;
 }
@@ -241,4 +248,17 @@ footer {
 
 small {
   color: #361d32;
+}
+
+.draggable.dragging {
+  background-color: #eee;
+  border: 1px solid #333;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    margin: 0 auto;
+    width: 35%;
+    padding: 0;
+  }
 }
