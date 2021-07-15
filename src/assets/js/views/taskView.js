@@ -17,10 +17,11 @@ export default class TaskView {
     this.input = createElement('input', {
       type: 'text',
       placeholder: 'Add to your list...',
+      class: 'descInput',
       name: 'task',
     });
     this.submit = createElement('input', {
-      type: 'button',
+      type: 'submit',
       tabindex: '-1',
       title: 'Click this or press enter to submit.',
     });
@@ -45,27 +46,27 @@ export default class TaskView {
     if (tasks.length) {
       this.pendingCount.textContent = `${tasks.filter((task) => task.complete === false).length}`;
       tasks.forEach((task) => {
-        const { description, complete } = task;
+        const { index, description, complete } = task;
 
-        const listItem = createElement('li', { class: 'task-container d-flex draggable', 'data-id': `${tasks.indexOf(task)}`, draggable: true });
+        const listItem = createElement('li', { class: 'task-container d-flex draggable', 'data-id': `${index}`, draggable: true });
 
-        const checkbox = createElement('input', { type: 'checkbox', 'data-id': `${tasks.indexOf(task)}`, class: 'checkbox' });
+        const checkbox = createElement('input', { type: 'checkbox', 'data-id': `${index}`, class: 'checkbox' });
         checkbox.checked = complete;
 
         const taskDesc = createElement('span', {
           contentEditable: true,
-          class: 'editable',
-          'data-id': `${tasks.indexOf(task)}`,
+          class: `${task.complete ? 'editable complete' : 'editable'}`,
+          'data-id': `${index}`,
         }, description);
 
         const deleteButton = createElement('button', {
-          class: 'delete material-icons delete-button d-none',
-          'data-id': `${tasks.indexOf(task)}`,
+          class: 'delete material-icons delete-button',
+          'data-id': `${index}`,
         }, 'delete');
 
         const dragButton = createElement('button', {
           class: 'more_vert material-icons drag-button',
-          'data-id': `${tasks.indexOf(task)}`,
+          'data-id': `${index}`,
           title: 'Hold and drag item, drop to reorder.',
         }, 'more_vert');
 
