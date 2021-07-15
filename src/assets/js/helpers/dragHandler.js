@@ -29,6 +29,7 @@ export default (view, tasks) => {
 
     item.addEventListener('dragend', (event) => {
       event.target.classList.remove('dragging');
+      window.location.reload();
     });
   });
 
@@ -36,10 +37,10 @@ export default (view, tasks) => {
     event.preventDefault();
     const afterNode = dragAfterNode(taskList, event.clientY);
     const draggable = getElement('.dragging');
-    if (afterNode === null) {
-      taskList.appendChild(draggable);
-    } else {
+    if (afterNode) {
       taskList.insertBefore(draggable, afterNode);
+    } else {
+      taskList.appendChild(draggable);
     }
   });
 
@@ -49,21 +50,15 @@ export default (view, tasks) => {
     if (!afterNode) {
       tasks = [...tasks, ...draggedItem];
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      view.showTasks(tasks);
-      window.location.reload();
     }
 
     if (afterNode) {
       if (draggedId > Number(afterNode.getAttribute('data-id'))) {
         tasks.splice(Number(afterNode.getAttribute('data-id')), 0, draggedItem[0]);
         localStorage.setItem('tasks', JSON.stringify(tasks));
-        view.showTasks(tasks);
-        window.location.reload();
       } else {
         tasks.splice(Number(afterNode.getAttribute('data-id')) - 1, 0, draggedItem[0]);
         localStorage.setItem('tasks', JSON.stringify(tasks));
-        view.showTasks(tasks);
-        window.location.reload();
       }
     }
   });
