@@ -64,7 +64,7 @@ export default () => ({
     editables.forEach((editable) => {
       editable.addEventListener('focusout', (event) => {
         if (this.newDescription) {
-          const task = TaskModel.tasks[Number(event.target.getAttribute('data-id'))];
+          const task = TaskModel.tasks[Number(event.target.getAttribute('data-id')) - 1];
           TaskModel.editTask(task, this.newDescription);
           this.newDescription = '';
           window.location.reload();
