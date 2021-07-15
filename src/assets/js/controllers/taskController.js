@@ -32,7 +32,7 @@ export default () => ({
   handletoggleTaskStatus() {
     getElementAll('.checkbox').forEach((checkbox) => {
       checkbox.addEventListener('change', () => {
-        const task = TaskModel.tasks[Number(checkbox.getAttribute('data-id'))];
+        const task = TaskModel.tasks[Number(checkbox.getAttribute('data-id')) - 1];
         TaskModel.toggleTaskStatus(task);
         window.location.reload();
       });
