@@ -111,6 +111,11 @@ header {
   color: #361d32;
 }
 
+form input[type='submit'] {
+  background: inherit;
+  border: none;
+}
+
 header,
 .main {
   max-width: 100%;
@@ -153,6 +158,10 @@ header,
   flex-direction: column;
 }
 
+.task-container {
+  position: relative;
+}
+
 .checkbox,
 .delete-button {
   flex: 0 1 0;
@@ -162,6 +171,11 @@ header,
   flex: 2 1 0;
   font-size: 1rem;
   outline: none;
+}
+
+.editable:hover,
+.editable:focus {
+  background: #ffffbe;
 }
 
 .editable.complete {
@@ -195,6 +209,18 @@ input[type=text] {
 
 input[type=button] {
   flex: 0 1 0;
+}
+
+.delete-button {
+  color: #b71c1c;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+.delete-button:hover {
+  opacity: 0.8;
+  font-size: 1.6rem;
 }
 
 .drag-button {
@@ -260,10 +286,56 @@ small {
   border: 1px solid #333;
 }
 
+.alert {
+  position: relative;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.alert-success {
+  background-color: #eceff1;
+  border: solid 1px green;
+  color: green;
+}
+
+.alert-danger {
+  background-color: #eceff1;
+  border: solid 1px #b71c1c;
+  color: #b71c1c;
+}
+
+.alert-close-btn {
+  position: absolute;
+  color: inherit;
+  background-color: inherit;
+  font-size: inherit;
+  border: none;
+  padding: 0 5px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.instructions {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
 @media only screen and (min-width: 768px) {
   .main {
     margin: 0 auto;
     width: 35%;
     padding: 0;
+  }
+
+  .alert {
+    max-width: 35%;
+  }
+
+  .instructions {
+    width: 35%;
   }
 }
